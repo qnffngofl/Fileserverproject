@@ -6,7 +6,7 @@
 </head>
 <body>
 <h1>
-	파일서버입니다. 
+	this is fileserver 
 </h1>
 
 <P>  The time on the server is ${serverTime}. </P>
