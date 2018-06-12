@@ -8,4 +8,25 @@
 		<property name="maxUploadSize" value="10485760" />
 		<property name="maxInMemorySize" value="104857600" />
 	</bean>
+	
+	<!-- DataSource 생성 -->
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="url" value="jdbc:mysql://192.168.1.19:3306/test" />
+		<property name="driverClassName" value="org.mariadb.jdbc.Driver" />
+		<property name="username" value="root" />
+	    <property name="password" value="1234" />	
+	</bean>
+	
+	<!-- SqlSessionFactory 생성 -->
+	<bean id="factoryBean" class="org.mybatis.spring.SqlSessionFactoryBean"><!--sqlsession들을 모아놓은 창고를 생성한다  sqlconnection이 생성된다 sqlconnection생성시 db가 연결이 된다.-->
+		<property name="mapperLocations" value="classpath:/sql/*.xml"/>
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+	
+	<!-- SqlSession 생성 -->
+	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate"><!--sqlsession들이 모인 위 창고에서 하나의 session을 뺴서 쓰겟다.  -->
+		<constructor-arg name="sqlSessionFactory" ref="factoryBean" />
+	</bean>
+	
+	
 </beans>
