@@ -33,7 +33,9 @@
 
 </head>
 <body>
-	<form action="/FileUpload/temp" enctype="multipart/form-data" method="post"> <!--생성한 빈 객체 연결  -->
+	<form action="http://gudi.iptime.org:10032/FileUpload/temp" enctype="multipart/form-data" method="post"> <!--생성한 빈 객체 연결  -->
+		<input type="text" name="boardNo" value="1"><br>
+		<input type="text" name="userNo" value="1"><br>
 		<input type="file" name="file" id="file" multiple="multiple"><br>
 		<input type="submit" value="파일 업로드">
 	</form>
