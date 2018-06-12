@@ -49,7 +49,7 @@
    
    <filter>
      <filter-name>CorsFilter</filter-name>
-     <filter-class>com.java.utill.CORSFilter</filter-class>
+     <filter-class>com.java.Fileserverproject.util.CORSFilter</filter-class>
    </filter>
    <filter-mapping>
      <filter-name>CorsFilter</filter-name>
